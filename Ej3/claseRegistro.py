@@ -9,8 +9,14 @@ class Registro:
         self.__presion = presion
 
     def __str__ (self):
-        hora = 0
-        print('En la hora {} se resgitraron'.format( hora ))
         return ('Temperatura {} - Humedad {} - Presion {}'.format( self.__temperatura, self.__humedad, self.__presion ))
 
+    def getTemperatura (self):
+        return self.__temperatura
+
+    def getHumedad (self):
+        return self.__humedad
+
+    def getPresion (self):
+        return self.__presion
     
