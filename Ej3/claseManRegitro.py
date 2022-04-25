@@ -55,7 +55,24 @@ class Manejador:
         for columna in range( hora ):
             for fila in range( dia ):
                 prom += self.__lista[fila][columna].getTemperatura()
-            print('Promedio de la temperatura para el dia {} fue {}'.format( dia, prom / dia ))   #{:10} cadena {:.2f} float    
+            print('Promedio de la temperatura para el dia {} fue {}'.format( dia, prom / dia ))   #{:10} cadena {:.2f} float   
+    
+    
+    
+        def promedioTemp (self): #opcion 2 #{:10} cadena {:.2f} float
+        #2dias x 24 horas --- dia1 + dia2 +dia3
+        dia = len( self.__lista )
+        print('cantidad de dias', dia)
+        hora = 24
+        prom = 0
+        for fila in range( dia ):
+            aux = 0
+            print('para el dia: ', dia)
+            for columna in range( hora ):
+                prom += self.__lista[fila][columna].getTemperatura()
+                aux = prom
+                
+            print('la temperatura promedio fue: ', aux / dia)
 
     def listar (self): #opcion 3
         print('opcion 3 en el manejador')
