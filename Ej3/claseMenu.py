@@ -21,18 +21,36 @@ class Menu:
 
     def opcion1 (self, objetoLista):  #mostrar variables por c/dia y hora
         if type( objetoLista ) == Manejador:
-            objetoLista.mostrarDH()
+            system('cls')
+            print('************************* Maximo y Minimo *************************')
+            print('------> MAXIMO:')
+            objetoLista.maximo()
+            print('\n------> MINIMO:')
+            objetoLista.minimo()
+            system('pause') #raw_input("Press enter to continue") linux
+            system('cls')
+            #system('clear') linux
         else:
             print('Error de tipo en menu')
 
     def opcion2 (self, objetoLista): #muestra la temperatura promedio
         if type( objetoLista ) == Manejador:
-            objetoLista.promedioTemp()
+            system('cls')
+            print('************************* Promedio Temperatura Mensual Por Hora *************************')
+            objetoLista.promedioTemperatura()
+            system('pause') #raw_input("Press enter to continue") linux
+            system('cls')
+            #system('clear') linux
 
-    def opcion3 (self): #dado un dia muestra por hora variables
-        print('opcion 3 en el menu ')
+    def opcion3 (self, objetoLista): #dado un dia muestra por hora variables
+        if type( objetoLista ) == Manejador:
+            system('cls')
+            print('************************* Mostrar Variables *************************')
+            objetoLista.mostrar()
 
     def salir (self):
-        system('clear')
-        print('Salir')
+        #system('clear') linux
+        system('cls')
+        print('Usted salio del programa')
+        return False
         
