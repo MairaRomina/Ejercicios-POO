@@ -4,23 +4,23 @@ from os import system
 
 
 if __name__ == '__main__':
-    listaRegistros = Manejador()
-    listaRegistros.agregarRegistro()
+    D = 2 #para el caso de prueba utilice 2 dias 
+    H = 24
+    
+    listaRegistros = Manejador( D, H ) #le doy al constructor valores para crear la lista bidimencional
     listaRegistros.test()
-    print( listaRegistros ) #muestra la lista
-
+    #print(listaRegistros)
+    
     menu = Menu()
 
-    op = 0
-    while op != 4:
+    salir = True
+    while salir:
         print('--------------- Menu de opciones ---------------')
         print('1. Mostrar max y min por cada dia')
         print('2. Temperatura promedio por hora')
-        print('1. Listar informacion por dia')
+        print('3. Listar informacion por dia')
         print('4. Salir')
         op =  input('Opcion: ')
-        menu.opcion( op, listaRegistros)
-
-    else:
-        system('clear')
-        print('Adios')
+        salir = menu.opcion( op, listaRegistros)
+    else:    
+        print('Adios!')  
