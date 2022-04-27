@@ -3,8 +3,8 @@ class Plan:
     __modelo = str
     __version = str
     __precio = int
-    __cantCuotas = int
-    cuotaLicitar = 15 #variable de clase
+    __cantCuotas = 84 #atributo de clase
+    __cuotaLicitar = 15 #atributo de clase
     
     def __init__(self, codigo, modelo, version, precio, cuotas):
         self.__codigo = codigo
@@ -15,15 +15,18 @@ class Plan:
                 
     @classmethod
     def getCuotaLicitar (cls):
-        return cls.cuotaLicitar  
+        return cls.__cuotaLicitar  
     
-    # @classmethod
-    # def setCuotaLicitar (cls):
-    #     valor = input('ingrese nuevo valor para las cuotas licitadas: ')
-    #     cls.cuotaLicitar =   valor        
+    @classmethod
+    def setCuotaLicitar (cls, valor):
+        cls.__cuotaLicitar =   valor  
+        
+    @classmethod
+    def getCantCuotas (cls):
+        return cls.__cantCuotas      
                 
     def __str__ (self): 
-        return '{} {} {} {} {} {} '.format(self.__codigo, self.__modelo, self.__version, self.__precio, self.__cantCuotas, self.getCuotaLicitar())
+        return '{} {} {} {} {} {} '.format(self.__codigo, self.__modelo, self.__version, self.__precio, self.getCantCuotas(), self.getCuotaLicitar())
     
     def getCodigo (self):
         return self.__codigo
@@ -39,9 +42,6 @@ class Plan:
             self.__precio = valor
         else:
             print('Error de tipo en plan ahorro')
-    
-    def getCantCuotas (self):
-        return self.__cantCuotas
     
     def getPrecio (self):
         return self.__precio
