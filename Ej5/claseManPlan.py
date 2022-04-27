@@ -66,7 +66,7 @@ class Manejador:
               monto = self.__lista[i].getCuotaLicitar() * valorC
               print('monto', monto)
               
-    def modificar (self):
+    def modificar (self): #opcion4
         codigo = int(input('Ingrese el codigo de un plan: '))
         b = 0
         for i in range( len( self.__lista ) ):
