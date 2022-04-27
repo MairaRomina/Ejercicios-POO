@@ -72,11 +72,10 @@ class Manejador:
         for i in range( len( self.__lista ) ):
             if codigo == self.__lista[i].getCodigo():
                 valor = int(input('Ingrese nuevo valor para las cuotas a licitar: '))
-                Plan.cuotaLicitar = valor
+                self.__lista[i].setCuotaLicitar( valor )  #llama al metodo de clase set para cambiar el valor
                 print('*** Valor actualizado ***')
                 b += 1
         if b == 0:
             system('cls')
             print('Codigo ingresado incorrecto')
-            
     
