@@ -19,7 +19,8 @@ class Plan:
     
     @classmethod
     def setCuotaLicitar (cls, valor):
-        cls.__cuotaLicitar =   valor  
+        if type( valor ) == int:
+            cls.__cuotaLicitar =   valor   
         
     @classmethod
     def getCantCuotas (cls):
