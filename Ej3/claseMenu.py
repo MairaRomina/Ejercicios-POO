@@ -41,12 +41,16 @@ class Menu:
             system('pause') #raw_input("Press enter to continue") linux
             system('cls')
             #system('clear') linux
+        else:
+            print('Error de tipo en menu')
 
     def opcion3 (self, objetoLista): #dado un dia muestra por hora variables
         if type( objetoLista ) == Manejador:
             system('cls')
             print('************************* Mostrar Variables *************************')
             objetoLista.mostrar()
+        else:
+            print('Error de tipo en menu')
 
     def salir (self):
         #system('clear') linux
