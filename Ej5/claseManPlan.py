@@ -64,7 +64,7 @@ class Manejador:
           for i in range( len( self.__lista ) ):
               valorC = (self.__lista[i].getPrecio() // self.__lista[i].getCantCuotas()) + self.__lista[i].getPrecio() * 0.10
               monto = self.__lista[i].getCuotaLicitar() * valorC
-              print('monto', monto)
+              print('Para el plan {} se debe pagar: {}'.format( i + 1, monto ))
               
     def modificar (self): #opcion4
         codigo = int(input('Ingrese el codigo de un plan: '))
