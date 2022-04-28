@@ -19,22 +19,31 @@ class Menu:
         else:
             func()
                 
-    def opcion1 (self, objV): #quien tiene mayor cantidad de millas
-        system('cls')
+    def opcion1 (self, objV): #quien tiene mayor cantidad de millas opcion1
+        #system('cls')
         print('**** Comparar Millas ****')
-        objV.comparar()
-        
-    def opcion2 (self, objV): #acumular millas
-        system('cls')
+        max = objV.maximo()
+        objV.buscarMayor( max )
+
+    def opcion2 (self, objV): #acumular millas opcion2
+        #system('cls')
         print('**** Acumular Millas ****')
+        num = int(input('Ingrese el numero del viajero al que desea acumular las millas: '))
+        i = objV.buscarIndice( num )
+        viajero = objV.getViajero( i )
+        print(viajero)
         acum = int(input('Ingrese cantidad de millas recorridas que desea acumular: '))
-        objV.acumMillas( acum )
-    
-    def opcion3 (self, objV): #canjear millas
-        system('cls')
+        objV.acumularMillas( acum, viajero )
+
+    def opcion3 (self, objV): #canjear millas opcion3
+        #system('cls')
         print('**** Canjear Millas ****')
-        objV.canjearMillas()
-        #print('Resultado en el menu', res)
+        num = int(input('Ingrese el numero del viajero al que desea canjear sus millas: '))
+        i = objV.buscarIndice( num )
+        viajero = objV.getViajero( i )
+        print(viajero)
+        canje = int(input('Ingrese cantidad de millas a canjear: '))
+        objV.canjearMillas( canje, viajero )
         
     def salir (self):
         print('Salir')
