@@ -31,7 +31,15 @@ class Viajero:
             
     def __gt__ (self, otro): #sobrecarga por izquierda mayor que
         if type( otro ) == Viajero:
-            return self.__millasAcum > otro.__millasAcum           
+            return self.__millasAcum > otro.__millasAcum   
+
+    def __ge__ (self, otro):
+        if type( otro ) == int:
+            return self.__millasAcum >= otro    
+
+    def __sub__ (self, otro):
+        if type( otro ) == int:
+            return self.__millasAcum - otro    
         
     # def canjearMillas (self):
     #     cant = int(input('Ingrese la cantidad de millas que desea canjear: '))
@@ -44,3 +52,9 @@ class Viajero:
     #     else:
     #         print('Error de tipo en canjear millas')
     #     return self.__millasAcum
+
+    def __add__ (self, otro):
+        if type( otro ) == int:
+            return self.__millasAcum + otro
+        else: 
+            print('Error de tipo al acumular las millas')
