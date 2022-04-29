@@ -28,22 +28,22 @@ class Menu:
     def opcion2 (self, objV): #acumular millas opcion2
         #system('cls')
         print('**** Acumular Millas ****')
-        num = int(input('Ingrese el numero del viajero al que desea acumular las millas: '))
+        num = int(input('Ingrese el numero del viajero: '))
         i = objV.buscarIndice( num )
         viajero = objV.getViajero( i )
         print(viajero)
         acum = int(input('Ingrese cantidad de millas recorridas que desea acumular: '))
-        objV.acumularMillas( acum, viajero )
+        objV.acumularMillas( acum, viajero, i )
 
     def opcion3 (self, objV): #canjear millas opcion3
         #system('cls')
         print('**** Canjear Millas ****')
-        num = int(input('Ingrese el numero del viajero al que desea canjear sus millas: '))
+        num = int(input('Ingrese el numero del viajero: '))
         i = objV.buscarIndice( num )
         viajero = objV.getViajero( i )
         print(viajero)
         canje = int(input('Ingrese cantidad de millas a canjear: '))
-        objV.canjearMillas( canje, viajero )
+        objV.canjearMillas( canje, viajero, i )
         
     def salir (self):
         print('Salir')
