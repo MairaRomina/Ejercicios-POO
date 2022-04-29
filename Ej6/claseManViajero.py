@@ -59,13 +59,16 @@ class Manejador:
                 print('El pasajero {} tiene mayor cantidad de millas, con un valor de: {}'.format( self.__lista[i].getIdentificador(), self.__lista[i].getcantidadMillas() ))
             i = i + 1
 
-    def acumularMillas (self, acum, viajero): #opcion2
+    def acumularMillas (self, acum, viajero, indice): #opcion2
         viajero = viajero + acum
+        self.__lista[indice] = viajero
         print('Valor de millas actualizado con exito!')
 
-    def canjearMillas(self, canje, viajero ):
+    def canjearMillas(self, canje, viajero, indice ):
         if viajero >= canje:
             viajero = viajero - canje
+            self.__lista[indice] = viajero
             print('Valores de millas actualizado, el canje se realizo con exito!')
         else:
             print('Error al canjear millas, no posee las suficientes para canjear')         
+      
