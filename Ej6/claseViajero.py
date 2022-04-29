@@ -37,9 +37,10 @@ class Viajero:
         if type( otro ) == int:
             return self.__millasAcum >= otro    
 
-    def __sub__ (self, otro):
+    def __sub__ (self, otro): #canjea millas
         if type( otro ) == int:
-            return self.__millasAcum - otro    
+            resta = self.__millasAcum - otro 
+            return  Viajero(self.__numViajero, self.__dni, self.__nombre, self.__apellido, resta)    
         
     # def canjearMillas (self):
     #     cant = int(input('Ingrese la cantidad de millas que desea canjear: '))
@@ -53,8 +54,9 @@ class Viajero:
     #         print('Error de tipo en canjear millas')
     #     return self.__millasAcum
 
-    def __add__ (self, otro):
+    def __add__ (self, otro): #acumula millas
         if type( otro ) == int:
-            return self.__millasAcum + otro
+            suma = otro + self.__millasAcum
+            return Viajero(self.__numViajero, self.__dni, self.__nombre, self.__apellido, suma) 
         else: 
-            print('Error de tipo al acumular las millas')
+            print('Error de tipo en add')
