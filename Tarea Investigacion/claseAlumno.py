@@ -22,6 +22,6 @@ class Alumno: #clase que instancia los objetos de tipo Alumno
     
     def ordenar (lista): #metodo que ordena la lista de mayor a menor
         list.sort( lista, key = lambda Alumno: Alumno.__notaFinal, reverse = True )
-        #se coloca key para indicarle el atributo que debe ordenar
+        #se coloca key para indicarle el el atributo por el que debe ordenar
         #se coloca reverse = True para que ordene de mayor a menor
         #si este atributo reverse no se colocase, el metodo sort() por defecto ordena de menor a mayor
