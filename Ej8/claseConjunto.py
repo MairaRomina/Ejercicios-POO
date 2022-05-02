@@ -46,3 +46,5 @@ class Conjunto:
     
     def __eq__ (self, otro):
         return self.__lista == otro.__lista
+    #igual conj = long (len()) corto a la primera que no me da igual la longitud
+    #recorro con 2 while y corto a la primera diferencia 
