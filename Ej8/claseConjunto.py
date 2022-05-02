@@ -42,9 +42,9 @@ class Conjunto:
         for i in self.__lista:
             if i not in otro.__lista:
                 conjuntoF.append( i )
-        return conjuntoF
+        return conjuntoF #para que sea de tipo conjuntos retorno Conjunto( conjuntoF )
     
     def __eq__ (self, otro):
-        return self.__lista == otro.__lista
+        return self.__lista == otro.__lista #pero funciona igual
     #igual conj = long (len()) corto a la primera que no me da igual la longitud
     #recorro con 2 while y corto a la primera diferencia 
