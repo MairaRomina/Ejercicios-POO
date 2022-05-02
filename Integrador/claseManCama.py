@@ -71,17 +71,19 @@ class ManejadorCama:
     def darAlta (self, fecha, i):
         if type( fecha ) == str:
             self.__arreglo[i - 1].setFechaAlta( fecha )
+            self.__arreglo[i - 1].setEstado( False )
+            self.__arreglo[i - 1].setNombre( None )
             print('La fecha de alta se actualizo con exito!')
         else:
             print('Error de tipo al actualizar la fecha')
     
-    def buscar(self, diag):
+    def mostrarDiag(self, diag):
         cont  = 0
         for i in range( self.__cantidad ):
-            if diag == self.__arreglo[i].getDiagnostico() and self.__arreglo[i].getFechaA() == None:
-                cont += 1
-                print('Paciente: {:10}    Cama: {:1}  Habitacion: {:2} Ingreso: {:4}'.format( self.__arreglo[i].getNombre(), self.__arreglo[i].getIdCama(), self.__arreglo[i].getHabitacion(), self.__arreglo[i].getFechaI() )) 
+            if diag == self.__arreglo[i].getDiagnostico():
+                if self.__arreglo[i].getEstado():
+                    cont += 1
+                    print('Paciente: {:10}    Cama: {:1}  Habitacion: {:2} Ingreso: {:4}'.format( self.__arreglo[i].getNombre(), self.__arreglo[i].getIdCama(), self.__arreglo[i].getHabitacion(), self.__arreglo[i].getFechaI() )) 
         if cont == 0:
             print('No se encontro ningun paciente con ese diagnostico')
-    
     
