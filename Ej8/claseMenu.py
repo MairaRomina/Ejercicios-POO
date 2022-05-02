@@ -29,7 +29,10 @@ class Menu:
 
     def opcion3 (self, A, B): #verificar si son iguales o diferentes 2 conjutos opcion3
         print('----------------- Igualdad -----------------')
-        print( A == B )
+        if( A == B ):
+            print('Los conjuntos son iguales')
+        else:
+            print('Los conjuntos no son iguales')
         
     def salir (self):
         print('Salir')
