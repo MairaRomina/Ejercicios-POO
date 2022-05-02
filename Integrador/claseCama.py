@@ -45,3 +45,6 @@ class Cama:
         
     def setEstado (self, valor):  #cambia a False
         self.__estado = valor
+
+    def getEstado (self):
+        return self.__estado
